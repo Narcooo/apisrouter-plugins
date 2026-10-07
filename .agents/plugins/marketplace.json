@@ -1,0 +1,20 @@
+{
+  "name": "apisrouter",
+  "interface": {
+    "displayName": "APIsRouter"
+  },
+  "plugins": [
+    {
+      "name": "apisrouter",
+      "source": {
+        "source": "local",
+        "path": "./plugins/apisrouter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

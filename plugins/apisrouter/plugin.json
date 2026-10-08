@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "apisrouter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
   "author": {
     "name": "APIsRouter",
@@ -26,7 +26,7 @@
         "defaultPrompt": [
           "Find the APIsRouter operation that returns a TikTok creator's recent posts and quote one call.",
           "Use APIsRouter to pull the Google search results for \"best crm for startups\" and summarize the top ten.",
-          "Check my pending APIsRouter requests and tell me what is waiting on payment."
+          "Help me read the result of an existing APIsRouter request; ask me for its request reference first."
         ],
         "brandColor": "#dc3a4c",
         "composerIcon": "./assets/icon.png",

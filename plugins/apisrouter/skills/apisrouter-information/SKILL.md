@@ -12,7 +12,7 @@ holder's prepaid balance within the limit they approved when connecting.
 
 ## Workflow
 
-1. `catalog_search` with a short keyword (`q`), optionally `platform`,
+1. `catalog_search` with a short keyword (`query`), optionally `platform`,
    `family` or `category`. Search is a literal substring match: try shorter
    or alternate terms when nothing matches, and page with `offset` instead of
    loading the whole catalog.
@@ -25,18 +25,27 @@ holder's prepaid balance within the limit they approved when connecting.
    `maximum_amount`. Keep the returned `request_ref`. Retries must reuse the
    same quote and idempotency key; never start a second purchase for the same
    intent.
-5. `request_get` until `status` is `completed`, then `result_fetch` with the
+5. Inspect the request's structured status. Use `request_get` for an executing
+   request; stop polling when user action is required. Once `completed`, use `result_fetch` with the
    `result_ref` (`offset` 0, `limit` up to 1000). Read `data.records`. The
    result's `total` counts delivery records, not rows inside a record.
 
 ## When a request waits
 
-- `awaiting_payment`: the balance is short. Call `request_funding` and give
-  the user the recharge link (https://apisrouter.com/console/recharge). After
-  they confirm they have paid, call `request_resume`. Opening the link is not
-  payment.
-- `awaiting_price_confirmation`: the price changed. Quote the identical
-  operation, input and quantity again and ask the user before confirming.
+- `awaiting_payment`: retain the original `request_ref` and explain the missing
+  balance. Only where the host permits a transactional link, call
+  `request_funding` and use its exact `action_url`, including `request_ref`.
+  Do not replace it with a generic recharge URL. On a host that prohibits such
+  links, explain the entitlement limit and link only to the informational
+  https://apisrouter.com/pricing page. When the user returns, call
+  `request_resume` with the original ref; the server checks actual funds.
+  Opening a link or a user statement is not payment evidence.
+- `awaiting_price_confirmation`: preserve the original request. For OAuth,
+  direct the account holder to https://apisrouter.com/console/capabilities
+  to review and confirm that request's price. A normal API Key must use the
+  authenticated REST review/confirm flow documented by the live OpenAPI;
+  do not substitute the account's OAuth confirmation. A chat reply alone
+  does not call an unavailable MCP confirmation tool.
 - `awaiting_authorization`: the connection's limit or scope does not cover
   this operation. Tell the user to widen it at
   https://apisrouter.com/console/authorizations; do not retry blindly.
@@ -51,6 +60,9 @@ holder's prepaid balance within the limit they approved when connecting.
   search and quote; purchases need the user to reconnect with full access.
 - Results are already paid for: re-read them with `result_fetch`, do not buy
   again. Keep `request_ref`, `order_ref` and `result_ref` in your notes.
+- Use `order_get` with a known `order_ref` to inspect the final charged amount.
+  MCP does not list all account requests: for a request without a known ref,
+  ask the user to select it in the account's capability history.
 - Do not paste API keys or tokens into prompts, files or logs.
 
 ## Without MCP

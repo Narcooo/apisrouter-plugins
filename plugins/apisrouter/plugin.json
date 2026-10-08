@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "apisrouter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
   "author": {
     "name": "APIsRouter",
@@ -10,7 +10,14 @@
   "homepage": "https://apisrouter.com/connect",
   "repository": "https://github.com/Narcooo/apisrouter-plugins",
   "license": "MIT",
-  "keywords": ["data", "social", "search", "scraping", "research", "mcp"],
+  "keywords": [
+    "data",
+    "social",
+    "search",
+    "scraping",
+    "research",
+    "mcp"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
@@ -19,7 +26,9 @@
         "longDescription": "APIsRouter gives an agent paid access to a catalog of social, search and web data operations: profiles, posts, comments, search results, keyword and site metrics, and more. The agent searches the catalog, reads the exact contract and price, gets a quote, and buys only within the limit the account holder approved. Results and charges show up in the APIsRouter console.",
         "developerName": "APIsRouter",
         "category": "Productivity",
-        "capabilities": ["Read"],
+        "capabilities": [
+          "Read"
+        ],
         "websiteURL": "https://apisrouter.com",
         "privacyPolicyURL": "https://apisrouter.com/privacy",
         "termsOfServiceURL": "https://apisrouter.com/terms",

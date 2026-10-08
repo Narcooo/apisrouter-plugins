@@ -1,0 +1,43 @@
+{
+  "name": "apisrouter",
+  "version": "0.1.2",
+  "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
+  "author": {
+    "name": "APIsRouter",
+    "url": "https://apisrouter.com"
+  },
+  "homepage": "https://apisrouter.com/connect",
+  "repository": "https://github.com/Narcooo/apisrouter-plugins",
+  "license": "MIT",
+  "keywords": [
+    "data",
+    "social",
+    "search",
+    "scraping",
+    "research",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "APIsRouter",
+    "shortDescription": "Social and search data",
+    "longDescription": "APIsRouter gives an agent paid access to a catalog of social, search and web data operations: profiles, posts, comments, search results, keyword and site metrics, and more. The agent searches the catalog, reads the exact contract and price, gets a quote, and buys only within the limit the account holder approved. Results and charges show up in the APIsRouter console.",
+    "developerName": "APIsRouter",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://apisrouter.com",
+    "privacyPolicyURL": "https://apisrouter.com/privacy",
+    "termsOfServiceURL": "https://apisrouter.com/terms",
+    "defaultPrompt": [
+      "Find the APIsRouter operation that returns a TikTok creator's recent posts and quote one call.",
+      "Use APIsRouter to pull the Google search results for \"best crm for startups\" and summarize the top ten.",
+      "Help me read the result of an existing APIsRouter request; ask me for its request reference first."
+    ],
+    "brandColor": "#dc3a4c",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

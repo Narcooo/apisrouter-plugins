@@ -13,9 +13,10 @@ codex plugin add apisrouter@apisrouter
 ```
 
 The plugin registers the `apisrouter` MCP server at
-`https://api.apisrouter.com/mcp` and signs in through OAuth: the browser
-opens https://apisrouter.com, you pick the spending limit the connection may
-use, and you are done.
+`https://api.apisrouter.com/mcp`. Complete the host’s OAuth sign-in when
+prompted: the browser opens https://apisrouter.com, where you choose the
+connection’s allowed operations, spending limit and expiry. Installation alone
+does not complete authorization.
 
 Check `codex plugin list --marketplace apisrouter --json` for both
 `installed: true` and `enabled: true`. Marketplace discovery alone does not
@@ -46,7 +47,9 @@ result have all been verified for that host.
 ## Layout
 
 - `.agents/plugins/marketplace.json` lists the plugins in this repository.
-- `plugins/apisrouter/plugin.json` is the plugin manifest.
+- `plugins/apisrouter/plugin.json` is the portable plugin manifest.
+- `plugins/apisrouter/.codex-plugin/plugin.json` supplies the MCP pointer for
+  Codex CLI clients that require the compatibility manifest.
 - `plugins/apisrouter/mcp.json` points at the MCP server.
 - `plugins/apisrouter/skills/apisrouter-information/SKILL.md` tells the agent
   how to search, quote, buy and read results.

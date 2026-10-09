@@ -1,6 +1,6 @@
 {
   "name": "apisrouter",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
   "author": {
     "name": "APIsRouter",

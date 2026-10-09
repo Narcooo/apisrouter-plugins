@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "apisrouter": {
+      "type": "http",
+      "url": "https://api.apisrouter.com/mcp"
+    }
+  }
+}

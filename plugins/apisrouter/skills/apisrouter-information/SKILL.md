@@ -21,8 +21,10 @@ holder's prepaid balance within the limit they approved when connecting.
 3. `quote_create` with `operation_ref`, `input` and `quantity`. The quote
    freezes input, contract and price for a few minutes. Nothing is charged.
 4. `request_start` with `quote_ref`, a fresh `idempotency_key` and
-   `max_charge_usd` as a decimal string no larger than the quote's
-   `maximum_amount`. Keep the returned `request_ref`. Retries must reuse the
+   `max_charge_usd` set to the quote's `maximum_amount` decimal string, but only
+   if that amount fits the user's approved spending limit. If the quote exceeds
+   that limit, stop before `request_start`; do not lower the cap and attempt the
+   purchase. Keep the returned `request_ref`. Retries must reuse the
    same quote and idempotency key; never start a second purchase for the same
    intent.
 5. Inspect the request's structured status. Use `request_get` for an executing

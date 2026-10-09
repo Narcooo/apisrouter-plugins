@@ -17,5 +17,7 @@
     "research",
     "mcp"
   ],
-  "displayName": "APIsRouter"
+  "logo": "./assets/logo.png",
+  "mcpServers": "./mcp.json",
+  "skills": "./skills/"
 }

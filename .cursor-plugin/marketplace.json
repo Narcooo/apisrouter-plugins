@@ -1,0 +1,17 @@
+{
+  "name": "apisrouter",
+  "owner": {
+    "name": "MANINGO TECHNOLOGY LTD",
+    "email": "support@apisrouter.com"
+  },
+  "metadata": {
+    "description": "APIsRouter social, search and web data for agent tasks."
+  },
+  "plugins": [
+    {
+      "name": "apisrouter",
+      "source": "./plugins/apisrouter",
+      "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase."
+    }
+  ]
+}

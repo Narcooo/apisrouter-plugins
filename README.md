@@ -55,15 +55,25 @@ flow the host permits. Continue with the same request to avoid buying twice.
 
 ## Grok Bot and Muse
 
-Grok Bot installs connectors from its own Marketplace. This package has the
-portable Agent Plugins manifest and MCP configuration supported by Cursor;
-installation and OAuth in Grok Bot still need a host-specific acceptance run.
+Grok Bot installs connectors from its own Marketplace. This repository includes
+Cursor marketplace metadata for the nested plugin and a Cursor compatibility
+manifest, alongside the portable Agent Plugins package. Public listing review,
+Grok Bot availability and its installation/OAuth acceptance are still pending.
 See [Grok Bot apps](https://docs.x.ai/grok-bot/computer-and-apps) and
 [Cursor's plugin formats](https://cursor.com/docs/reference/plugins).
 
 Muse distribution uses its [connector platform](https://muse.ai/platform/docs).
 Its listing, authentication and tool permissions require a separate review.
 An APIsRouter listing and a completed Muse account connection are pending.
+An initial Muse probe reached public catalog discovery and a native secure
+API-key form; authenticated data use and an independent new-user run remain
+unverified. See the distribution record for the exact evidence scope.
+
+The publisher is **MANINGO TECHNOLOGY LTD**. See the
+[public distribution record](docs/public-distribution.md),
+[service contract](docs/service-contract.md) and
+[reviewer cases](docs/reviewer-cases.md) for submission materials and the exact
+verification boundary. Customers use their own account, permissions and balance.
 
 ## Distribution and acceptance
 
@@ -80,9 +90,11 @@ structure; connected-account and paid-task checks are recorded separately.
 
 - `.agents/plugins/marketplace.json`: Codex repository marketplace.
 - `.claude-plugin/marketplace.json`: Claude repository marketplace.
+- `.cursor-plugin/marketplace.json`: Cursor repository marketplace.
 - `plugins/apisrouter/plugin.json`: portable Agent Plugins identity.
 - `plugins/apisrouter/.codex-plugin/plugin.json`: Codex compatibility manifest.
 - `plugins/apisrouter/.claude-plugin/plugin.json`: Claude compatibility manifest.
+- `plugins/apisrouter/.cursor-plugin/plugin.json`: Cursor compatibility manifest.
 - `plugins/apisrouter/mcp.json`: portable remote MCP configuration.
 - `plugins/apisrouter/.mcp.json`: Claude's remote connector configuration.
 - `plugins/apisrouter/skills/apisrouter-information/SKILL.md`: shared workflow.
@@ -90,3 +102,8 @@ structure; connected-account and paid-task checks are recorded separately.
 Compatibility manifests keep the same identity and version. The two MCP files
 use each format's HTTP transport name and the same server URL. No keys, tokens
 or account-specific grants belong in this repository.
+
+The 512-pixel PNG icons are rendered from `assets/brand-mark.svg`, the official
+white APIsRouter mark. Its bytes match the website's
+`favicon-apisrouter-d6a427af.svg`; SHA-256:
+`d6a427af8095a167a4085a5842cac7bdfdd50c9e5450549574398b1cf25703db`.

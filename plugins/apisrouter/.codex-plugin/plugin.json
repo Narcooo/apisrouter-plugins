@@ -1,9 +1,9 @@
 {
   "name": "apisrouter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
   "author": {
-    "name": "APIsRouter",
+    "name": "MANINGO TECHNOLOGY LTD",
     "url": "https://apisrouter.com"
   },
   "homepage": "https://apisrouter.com/connect",
@@ -23,7 +23,7 @@
     "displayName": "APIsRouter",
     "shortDescription": "Social and search data",
     "longDescription": "APIsRouter gives an agent paid access to a catalog of social, search and web data operations: profiles, posts, comments, search results, keyword and site metrics, and more. The agent searches the catalog, reads the exact contract and price, gets a quote, and buys only within the limit the account holder approved. Results and charges show up in the APIsRouter console.",
-    "developerName": "APIsRouter",
+    "developerName": "MANINGO TECHNOLOGY LTD",
     "category": "Productivity",
     "capabilities": [
       "Read"

@@ -1,9 +1,9 @@
 {
   "name": "apisrouter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Buy social, search and web data for an agent task from the APIsRouter catalog, with a quote before every purchase.",
   "author": {
-    "name": "APIsRouter",
+    "name": "MANINGO TECHNOLOGY LTD",
     "url": "https://apisrouter.com"
   },
   "homepage": "https://apisrouter.com/connect",
